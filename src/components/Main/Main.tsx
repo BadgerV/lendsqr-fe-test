@@ -12,6 +12,7 @@ import { RowSeriesHeader } from "../RowSeries/RowSeries";
 import Select from "react-select";
 
 //JSX element
+//JSX elemtn
 const Main = () => {
   const details = [
     {
