@@ -1,0 +1,126 @@
+// Colors
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$background-color: #ecf0f1;
+
+// Font weights
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
+// Spacing
+$padding-small: 10px;
+$padding-medium: 20px;
+$padding-large: 30px;
+
+// Border radius
+$border-radius: 5px;
+
+// Box shadow
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// Other variables
+$line-height: 1.5;
+$transition-duration: 0.3s;
+
+// Example of a mixin
+@mixin button-styles {
+  padding: $padding-medium;
+  border-radius: $border-radius;
+  font-weight: $font-bold;
+  background-color: $primary-color;
+  color: white;
+  box-shadow: $box-shadow;
+  transition: background-color $transition-duration ease-in-out;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+//DEFAULT STYLES
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: inherit;
+}
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+fieldset,
+label {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  all: unset;
+}
+input {
+  all: unset;
+}
+select {
+  outline: none;
+  border: none;
+}
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #b2b2b2;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #b2b2b2;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #b2b2b2;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #b2b2b2;
+}
