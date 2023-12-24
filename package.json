@@ -14,9 +14,11 @@
     "-": "^0.0.1",
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-react": "^7.23.3",
+    "@types/react-select": "^5.0.1",
     "identity-obj-proxy": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-select": "^5.8.0",
     "sass": "^1.69.5",
     "save-dev": "^0.0.1-security"
   },

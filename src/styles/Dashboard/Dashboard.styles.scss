@@ -1,0 +1,55 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  
+  position: relative;
+
+  .dashboard-right {
+    flex: 1;
+  }
+
+  .menu-icon {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+
+    cursor: pointer;
+  }
+
+  .menu-icon-close {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0.2rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+  .dashboard-user__main {
+    background-color: white;
+    transition: 0.2s all ease-out;
+    z-index: 300000000;
+
+    @media screen and (max-width: 1133px) {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  @media screen and (max-width: 1133px) {
+    grid-template-columns: 1fr;
+
+    .menu-icon {
+      display: block;
+      opacity: 1;
+    }
+
+    .menu-icon-close {
+      display: block;
+      opacity: 1;
+    }
+  }
+}

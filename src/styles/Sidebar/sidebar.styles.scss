@@ -1,0 +1,53 @@
+//importing global styles
+@import "../global.styles";
+
+.sidebar-container {
+  // overflow-y: scroll;
+
+  // scrollbar-width: thin;
+  // transition: 0.3s all;
+
+  // /* Style the thumb */
+  // scrollbar-color: rgba(215, 209, 209, 0.689) rgba(0, 0, 0, 0);
+
+  // /* Change the thumb color on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background-color: rgba(179, 168, 168, 0.997);
+  // }
+
+  // /* Style the track */
+  // &::-webkit-scrollbar-track {
+  //   background-color: #ece6e6;
+  //   border-radius: 100px;
+  // }
+
+  // /* Style the thumb */
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: rgba(155, 150, 150, 0.689);
+  //   border-radius: 100px;
+  // }
+
+
+  .sidebar__switch-organization-text {
+    color: $primary-color;
+    font-size: $primary-font-size;
+    font-weight: 400;
+
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .sidebar__heading-text {
+    display: block;
+    margin: 1.5rem 0 0.5rem 1.5rem;
+    color: $secondary-color;
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+}

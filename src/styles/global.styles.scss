@@ -1,8 +1,17 @@
 // Colors
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$accent-color: #e74c3c;
+// Colors
+$primary-color: #213f7d;
+$secondary-color: #545f7d;
+$accent-color: #39cdcc;
 $background-color: #ecf0f1;
+$border-color: #545f7d26;
+$background-color: #fffdfd;
+
+//font-sizes
+$primary-font-size: 0.9rem;
+$tertiary-font-size: 0.7rem;
+$secondary-font-size: 0.8rem;
+$font-size-big: 1.6rem;
 
 // Font weights
 $font-light: 300;
@@ -39,6 +48,24 @@ $transition-duration: 0.3s;
   }
 }
 
+//IMPORTING FONTS
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../fonts/AvenirNextLTPro-Bold.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+//SRROLLBAR
+
+
 //DEFAULT STYLES
 *,
 *:before,
@@ -46,6 +73,7 @@ $transition-duration: 0.3s;
   box-sizing: inherit;
   font-family: inherit;
 }
+
 html,
 body {
   height: 100%;
@@ -53,6 +81,7 @@ body {
   margin: 0;
   width: 100%;
   overflow-x: hidden;
+  font-family: "Work Sans", sans-serif;
 }
 
 html {

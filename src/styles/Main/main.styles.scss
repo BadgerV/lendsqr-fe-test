@@ -1,0 +1,46 @@
+//importing variables from global styles
+@import "../global.styles";
+
+.main-container {
+  height: 100%;
+  padding: 3em;
+
+  &__top {
+    margin-bottom: 2em;
+    span {
+      font-size: $font-size-big;
+      font-weight: 500;
+      color: $primary-color;
+    }
+  }
+
+  &__middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  &__bottom {
+    // overflow-x: scroll;
+    margin: 3em 0;
+    box-shadow: 3px 5px 20px 0px #0000000a;
+    padding: 0em 2rem;
+
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #39cdcc;
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+  }
+
+  .main-container__pagination {
+    display: flex;
+    flex-direction: row;
+  }
+}

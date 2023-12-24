@@ -1,0 +1,113 @@
+//importing variables from global styles
+@import "../global.styles";
+
+.rowseries__container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.7fr 1.35fr 1.5fr 0.75fr 0.2fr;
+  padding: 1rem;
+
+  .RowSeries__header_text {
+    color: $secondary-color;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .RowSeries__cursor {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    position: relative;
+  }
+
+  .RowSeries__special {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.7fr 1.35fr 1.5fr 0.75fr 0.2fr;
+  }
+
+  .rowseries__text {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: $secondary-color;
+  }
+
+  .RowSeries__hover-display {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    top: 2rem;
+    padding: 1.5em;
+    border: 1px solid #545f7d24;
+    border-radius: 4px;
+    box-shadow: 3px 5px 20px 0px #0000000a;
+
+    .rowSeries__perInput {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-bottom: 0.7rem;
+
+      label {
+        font-weight: 500;
+        font-size: 0.75rem;
+        color: $secondary-color;
+      }
+
+      input {
+        height: 2rem;
+        border-radius: 8px;
+        outline: none;
+        border: 1px solid $border-color;
+        color: hsla(224, 20%, 41%, 0.482);
+        padding: 0.15em 1rem;
+        font-size: 0.7rem;
+        font-weight: 400;
+
+        &::placeholder {
+          color: #545f7d;
+        }
+      }
+
+      .date-input {
+        appearance: none; // Remove the default appearance
+
+        &::-webkit-calendar-picker-indicator {
+          background: url("/assets/calendar-icon.png") no-repeat center center;
+          width: 16px; /* Adjust the width of your custom image */
+          height: 16px; /* Adjust the height of your custom image */
+          cursor: pointer;
+        }
+      }
+    }
+
+    .RowSeries__button-cont {
+      display: flex;
+      width: 100%;
+      margin-top: 0.6rem;
+      flex-direction: row;
+      justify-content: space-between;
+
+      button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.2rem;
+        outline: none;
+        border-radius: 5px;
+        font-weight: 500;
+      }
+
+      &-reset {
+        color: #545f7d;
+        background-color: transparent;
+        cursor: pointer;
+        border: 1px solid #545f7d;
+      }
+
+      &-filter {
+        color: white;
+        background-color: #39cdcc;
+        cursor: pointer;
+      }
+    }
+  }
+}

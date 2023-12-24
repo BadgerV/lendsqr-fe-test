@@ -1,0 +1,89 @@
+//importing global styles
+@import "../global.styles";
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.5em 2em;
+  gap: 2em;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.1);
+
+  &__left {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+
+    img {
+      max-height: 1.5em;
+    }
+
+    span {
+      font-size: 2em;
+      font-family: "Avenir Next Bold", sans-serif;
+      color: $primary-color;
+    }
+  }
+  &__middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    &-input-cont {
+      border: 1px solid $border-color;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      width: 25em;
+
+      position: relative;
+
+      input {
+        font-size: 0.85em;
+      }
+
+      .img-container {
+        background-color: $accent-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+    margin-right: 2em;
+
+    &-doc-text {
+      font-size: 0.9em;
+      text-decoration: underline;
+      color: #213f7d;
+      margin-right: 2em;
+      font-family: "poppins", sans-serif;
+    }
+    &-bell-icon {
+      margin-right: 1em;
+    }
+
+    &-profile-pic {
+      border-radius: 50%;
+    }
+    &-profile-text {
+      font-size: 0.9em;
+      color: #213f7d;
+      font-weight: bolder;
+    }
+  }
+}

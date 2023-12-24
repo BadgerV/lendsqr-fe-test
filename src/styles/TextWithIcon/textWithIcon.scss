@@ -1,0 +1,26 @@
+//importing global styles
+@import "../global.styles";
+
+.text-with-icon {
+  color: $primary-color;
+  font-size: 0.9rem;
+  font-weight: 400;
+
+  padding: 0.8rem 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  transition: 0.2s all;
+
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(
+      to right,
+      #39cdcc 2%,
+      hsla(180, 60%, 51%, 0.076) 2%
+    );
+  }
+}
