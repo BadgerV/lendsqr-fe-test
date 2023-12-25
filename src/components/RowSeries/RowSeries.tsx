@@ -23,10 +23,10 @@ const RowSeries: React.FC<RowSeriesProps> = ({
   type,
 }) => {
   //state to track if the
-  const [openHover, setOpenHover] = useState(false);
+  const [openModal, setModal] = useState(false);
 
   const handleFunction = () => {
-    setOpenHover(!openHover);
+    setModal(!openModal);
   };
 
   return (
@@ -60,32 +60,32 @@ const RowSeries: React.FC<RowSeriesProps> = ({
           onClick={handleFunction}
         />
         <div
-          className="RowSeries__options-hover"
-          style={{ display: openHover ? "flex" : "none" }}
+          className="rowSeries__options-hover"
+          style={{ display: openModal ? "flex" : "none" }}
         >
-          <div className="RowSeries__hover-class">
+          <div className="rowSeries__options-class">
             <img
               src="/assets/icon1.svg"
-              className="RowSeries__hover-icon"
+              className="rowSeries__hover-icon"
               alt=""
             />
-            <span className="RowSeries__view">View Details</span>
+            <span className="rowSeries__view">View Details</span>
           </div>
-          <div className="RowSeries__hover-class">
+          <div className="rowSeries__options-class">
             <img
               src="/assets/icon2.svg"
-              className="RowSeries__hover-icon"
+              className="rowSeries__hover-icon"
               alt=""
             />
-            <span className="RowSeries__view">Blacklist User</span>
+            <span className="rowSeries__view">Blacklist User</span>
           </div>
-          <div className="RowSeries__hover-class">
+          <div className="rowSeries__options-class">
             <img
               src="/assets/icon3.svg"
-              className="RowSeries__hover-icon"
+              className="rowSeries__hover-icon"
               alt=""
             />
-            <span className="RowSeries__view">Activate User</span>
+            <span className="rowSeries__view">Activate User</span>
           </div>
         </div>
       </div>
@@ -155,10 +155,10 @@ const HoverDisplay: React.FC<HoverDisplayProps> = ({ isOpen }) => {
 export default RowSeries;
 
 export const RowSeriesHeader = () => {
-  const [openHover, setOpenHover] = useState(false);
+  const [openModal, setModal] = useState(false);
 
   const handleFunction = () => {
-    setOpenHover(!openHover);
+    setModal(!openModal);
   };
   return (
     <div className="rowseries__container">
@@ -173,7 +173,7 @@ export const RowSeriesHeader = () => {
           alt="filter"
           onClick={handleFunction}
         />
-        <HoverDisplay isOpen={openHover} />
+        <HoverDisplay isOpen={openModal} />
       </div>
       <div className="rowseries__container--second RowSeries__cursor">
         <span className="RowSeries__header_text">USERNAME</span>

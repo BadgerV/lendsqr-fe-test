@@ -1,5 +1,6 @@
 //importing external stylesheet
 import "../../styles/Main/main.styles.scss";
+import { paginationSelectStyles } from "../../utils/utils";
 
 //importing infobox component
 import InfoBox from "../InfoBox/InfoBox";
@@ -93,7 +94,7 @@ const Main = () => {
       <div className="main-container__top">
         <span>Users</span>
       </div>
-      <div className="main-container__middle">
+      {/* <div className="main-container__middle">
         <InfoBox icon="/assets/first-icon.png" text="USERS" number="2,453" />
         <InfoBox
           icon="/assets/second-icon.png"
@@ -110,7 +111,7 @@ const Main = () => {
           text="USERS WITH SAVINGS"
           number="102,453"
         />
-      </div>
+      </div> */}
       <div className="main-container__bottom">
         <>
           <RowSeriesHeader />
@@ -121,15 +122,25 @@ const Main = () => {
         </>
       </div>
 
-      <div className="main-container__pagination">
+      {/* <div className="main-container__pagination">
         <div className="main-container__pagination-left">
           <span>Showing</span>
 
-          <Select />
-          <span>Out of 100</span>
+          <Select styles={paginationSelectStyles} placeholder={"100"} />
+          <span>out of 100</span>
         </div>
-        <div className="main-container__pagination-right"></div>
-      </div>
+        <div className="main-container__pagination-right">
+          <img src="/assets/prev-icon.svg" alt="prev" />
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>...</span>
+          <span>15</span>
+          <span>16</span>
+
+          <img src="/assets/next-icon.svg" alt="next" />
+        </div>
+      </div> */}
     </div>
   );
 };

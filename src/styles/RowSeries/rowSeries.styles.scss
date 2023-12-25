@@ -1,10 +1,13 @@
-//importing variables from global styles
 @import "../global.styles";
 
 .rowseries__container {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1.7fr 1.35fr 1.5fr 0.75fr 0.2fr;
   padding: 1rem;
+
+  @media screen and (max-width: 1080px) {
+    grid-template-columns: 9rem 8rem 13rem 10rem 10rem 6rem 2rem;
+  }
 
   .RowSeries__header_text {
     color: $secondary-color;
@@ -41,6 +44,8 @@
     border: 1px solid #545f7d24;
     border-radius: 4px;
     box-shadow: 3px 5px 20px 0px #0000000a;
+    gap: 0.5em;
+    z-index: 9999999999;
 
     .rowSeries__perInput {
       display: flex;
@@ -107,6 +112,46 @@
         color: white;
         background-color: #39cdcc;
         cursor: pointer;
+      }
+    }
+  }
+
+  &--seventh {
+    position: relative;
+
+    .rowSeries__options-hover {
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      background-color: white;
+      z-index: 200;
+      border-radius: 10px;
+
+      box-shadow: 0 0 5px 2px hsla(0, 0%, 0%, 0.071);
+
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 0.5rem;
+      width: 10rem;
+    }
+
+    .rowSeries__options-class {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+
+      cursor: pointer;
+      transition: 0.2s all ease-out;
+
+      &:hover {
+        background-color: hsla(0, 0%, 0%, 0.088);
+      }
+
+      span {
+        color: $primary-color;
+        font-size: $tertiary-font-size;
       }
     }
   }
