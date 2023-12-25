@@ -5,7 +5,6 @@
   height: 100%;
   padding: 3rem;
   max-width: 100%;
-  
 
   @media screen and (max-width: 800px) {
     padding: 3rem 2rem;
@@ -44,10 +43,14 @@
     box-shadow: 3px 5px 20px 0px #0000000a;
     padding: 0em 2rem;
     margin: auto;
-
+    margin-top: 3rem;
+    margin-bottom: 1em;
 
     z-index: 1;
 
+    @media screen and (max-width: 1300px) {
+      padding: 0;
+    }
     @media screen and (max-width: 1080px) {
       overflow-x: scroll !important;
       max-width: 86vw;
@@ -70,6 +73,10 @@
         font-size: 0.9em;
         font-weight: 400;
         color: $secondary-color;
+
+        @media screen and (max-width: 700px) {
+          display: none;
+        }
       }
     }
 
@@ -78,6 +85,12 @@
       flex-direction: row;
       gap: 1.5em;
       align-items: center;
+
+      .span-for-larger-screen-sizes {
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
 
       img {
         background-color: #213f7d1a;

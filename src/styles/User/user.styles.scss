@@ -1,12 +1,7 @@
-.dashboard-container {
-  display: flex;
-  flex-direction: row;
-  
+.user-splash {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
   position: relative;
-
-  .dashboard-right {
-    flex: 1;
-  }
 
   .menu-icon {
     display: none;
@@ -16,6 +11,7 @@
     left: 1rem;
 
     cursor: pointer;
+    z-index: 5;
   }
 
   .menu-icon-close {
@@ -27,19 +23,20 @@
     cursor: pointer;
   }
 
-  .dashboard-user__main {
+  .usermain {
     background-color: white;
     transition: 0.2s all ease-out;
-    z-index: 300000000;
+    z-index: 3;
+    height: 100%;
 
-    @media screen and (max-width: 1230px) {
+    @media screen and (max-width: 1133px) {
       position: absolute;
       left: 0;
       top: 0;
     }
   }
 
-  @media screen and (max-width: 1230px) {
+  @media screen and (max-width: 1133px) {
     grid-template-columns: 1fr;
 
     .menu-icon {

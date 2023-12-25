@@ -1,0 +1,331 @@
+$text-color-primary: #213f7d;
+$background-color-primary: #39cdcc;
+$primary-font-size: 0.9rem;
+$tertiary-font-size: 0.7rem;
+$secondary-font-size: 0.8rem;
+$big-primary-font-size: 1.1rem;
+
+$header-text-color: #545f7d;
+
+.user-main {
+  padding: 2.5rem;
+  background-color: hsla(0, 0%, 90%, 0.12);
+
+  .top {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    .back-text {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .text {
+      font-weight: 400;
+      font-size: $primary-font-size;
+      color: $text-color-primary;
+    }
+
+    .top-bottom {
+      margin-top: 1rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @media screen and (max-width: 538px) {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .user-text {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $text-color-primary;
+      }
+
+      .button-cont {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    
+
+        @media screen and (max-width: 538px) {
+          width: 100%;
+          justify-content: space-around;
+        }
+
+        .buttons {
+          outline: none;
+          border: none;
+          background-color: transparent;
+          font-size: 0.75rem;
+          font-weight: 600;
+          border-radius: 5px;
+          letter-spacing: 1px;
+          width: 10rem;
+          text-align: center;
+          cursor: pointer;
+
+          @media screen and (max-width: 710px) {
+            width: 9rem;
+            font-size: 0.7rem;
+          }
+        }
+
+        .blacklist-button {
+          padding: 0.6rem 0;
+          color: #e4033b;
+          border: 1.5px solid #e4033b;
+        }
+
+        .activate-button {
+          padding: 0.6rem 0;
+          color: #39cdcc;
+          border: 1.5px solid #39cdcc;
+        }
+      }
+    }
+  }
+
+  .middle {
+    background-color: white;
+    padding: 2rem 0 0 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    .middle-top {
+      display: flex;
+      flex-direction: row;
+
+      gap: 1.5rem;
+      align-items: center;
+
+      color: $text-color-primary;
+
+      @media screen and (max-width: 700px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+        padding: 0.5rem;
+        grid-template-areas:
+          "avatar avatar avatar"
+          "name tier account";
+      }
+
+      @media screen and (max-width: 592px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "avatar avatar "
+          "name name"
+          "tier account";
+      }
+
+      @media screen and (max-width: 452px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .middle-top-first {
+        @media screen and (max-width: 700px) {
+          grid-area: avatar;
+        }
+      }
+
+      .middle-top-second {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        @media screen and (max-width: 592px) {
+          grid-area: name;
+        }
+
+        .middle-name {
+          font-weight: 500;
+          font-size: $primary-font-size;
+
+          @media screen and (max-width: 592px) {
+            font-size: 1.3rem;
+          }
+        }
+
+        .serial-number {
+          font-weight: 300;
+          font-size: $secondary-font-size;
+
+          @media screen and (max-width: 592px) {
+            font-size: 1rem;
+            text-align: center;
+          }
+        }
+      }
+
+      .middle-top-third {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 2rem;
+
+        border-right: 1px solid hsla(224, 20%, 41%, 0.155);
+        border-left: 1px solid hsla(224, 20%, 41%, 0.155);
+
+        @media screen and (max-width: 592px) {
+          border: none;
+        }
+
+        .tier {
+          font-size: $secondary-font-size;
+          font-weight: 400;
+
+          @media screen and (max-width: 592px) {
+            font-weight: 500;
+            font-size: $big-primary-font-size;
+          }
+
+          @media screen and (max-width: 476px) {
+            font-size: $secondary-font-size;
+          }
+        }
+
+        .stars {
+          text-align: center;
+        }
+      }
+
+      .middle-top-fourth {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .middle-ammount {
+          font-weight: 500;
+          font-size: $big-primary-font-size;
+
+          @media screen and (max-width: 476px) {
+            text-align: center;
+            font-size: $secondary-font-size;
+          }
+        }
+
+        .bank {
+          font-weight: 400;
+          font-size: $tertiary-font-size;
+
+          @media screen and (max-width: 476px) {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .middle-bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 2rem;
+      font-size: $secondary-font-size;
+
+      .link {
+        color: $text-color-primary;
+        padding: 0 1.5rem 0.6rem 1.5rem;
+        cursor: pointer;
+      }
+
+      .selected {
+        color: #39cdcc;
+        border-bottom: 2px solid #39cdcc;
+      }
+
+      .loans-and-savings {
+        @media screen and (max-width: 844px) {
+          display: none;
+        }
+      }
+
+      .bank-details {
+        @media screen and (max-width: 636px) {
+          display: none;
+        }
+      }
+
+      .document {
+        @media screen and (max-width: 506px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    background-color: white;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    color: $text-color-primary;
+
+    .bottom-header {
+      display: block;
+
+      font-size: $primary-font-size;
+      font-weight: 500;
+      color: $text-color-primary;
+      margin-bottom: 1.5rem;
+    }
+
+    .personal-cont {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.3fr 0.7fr 0.5fr;
+      row-gap: 2rem;
+      column-gap: 2rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid hsla(224, 20%, 41%, 0.155);
+
+      @media screen and (max-width: 992px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        min-width: 100%;
+
+        @media screen and (max-width: 992px) {
+          min-width: fit-content;
+          max-width: fit-content;
+        }
+
+        .top-text {
+          font-size: $tertiary-font-size;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+
+        .bottom-text {
+          font-size: $secondary-font-size;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .education-and-employment {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .guarantor {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 674px) {
+    padding: 1.5rem;
+  }
+}
