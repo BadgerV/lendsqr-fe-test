@@ -50,7 +50,6 @@ $header-text-color: #545f7d;
         display: flex;
         flex-direction: row;
         gap: 1rem;
-    
 
         @media screen and (max-width: 538px) {
           width: 100%;
@@ -96,6 +95,7 @@ $header-text-color: #545f7d;
 
     display: flex;
     flex-direction: column;
+    box-shadow: 3px 5px 20px 0px #0000000a;
 
     .middle-top {
       display: flex;
@@ -194,7 +194,9 @@ $header-text-color: #545f7d;
         }
 
         .stars {
-          text-align: center;
+          display: flex;
+          flex-direction: row;
+          gap: 0.5rem;
         }
       }
 
@@ -230,6 +232,7 @@ $header-text-color: #545f7d;
       justify-content: space-between;
       margin-top: 2rem;
       font-size: $secondary-font-size;
+      box-shadow: 3px 5px 20px 0px #0000000a;
 
       .link {
         color: $text-color-primary;
@@ -264,7 +267,7 @@ $header-text-color: #545f7d;
 
   .bottom {
     background-color: white;
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 1rem 1.5rem;
     color: $text-color-primary;
 

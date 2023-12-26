@@ -41,7 +41,7 @@ export const dropDownCustomStyles = {
     color: "#545F7D",
     fontFamily: "Work Sans, sans-serif",
     fontSize: "0.7rem",
-    padding : "0.4rem",
+    padding: "0.4rem",
     fontWeight: "300",
   }),
 };
@@ -89,3 +89,7 @@ export const paginationSelectStyles = {
     fontWeight: "300",
   }),
 };
+
+//styles for the star component
+export const emptyStarStyle = { color: "#E9B200", border: "1px solid #E9B200" };
+export const fullStarStyle = { color: "#E9B200", border: "1px solid #E9B200" };

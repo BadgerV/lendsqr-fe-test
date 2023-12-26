@@ -1,7 +1,9 @@
 //importing stylesheet
-import '../../styles/UserInfo/userInfo.styles.scss';
+import "../../styles/UserInfo/userInfo.styles.scss";
 
 const UserInfo = () => {
+  const totalRating = 3;
+  const rating = 1;
   return (
     <div className="user-main">
       <div className="top">
@@ -34,7 +36,15 @@ const UserInfo = () => {
           </div>
           <div className="middle-top-third">
             <span className="tier">User's Tier</span>
-            <span className="stars">* * *</span>
+            <span className="stars">
+              {[...Array(totalRating)].map((star, index) => {
+                if (index < rating) {
+                  return <img src="/assets/filledStar-icon.png" alt="star" />;
+                } else {
+                  return <img src="/assets/emptyStar-icon.png" alt="star" />;
+                }
+              })}
+            </span>
           </div>
           <div className="middle-top-fourth">
             <span className="middle-ammount">₦200,000.00</span>
@@ -164,6 +174,6 @@ const UserInfo = () => {
       </div>
     </div>
   );
-}
+};
 
-export default UserInfo
+export default UserInfo;
