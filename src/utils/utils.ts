@@ -90,3 +90,11 @@ export const paginationSelectStyles = {
   }),
 };
 
+export function formatNumber(number: number): string {
+  const roundedNumber = Math.round(number / 1000) * 1000;
+  return roundedNumber.toLocaleString();
+}
+
+export function capitalizeFirstLetter(input: string): string {
+  return input.charAt(0).toUpperCase() + input.slice(1);
+}

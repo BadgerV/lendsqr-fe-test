@@ -1,14 +1,66 @@
 //importing stylesheet
+import { RootState } from "../../app/store";
 import "../../styles/UserInfo/userInfo.styles.scss";
+import { useSelector } from "react-redux";
+import { User } from "../../types";
+import { capitalizeFirstLetter, formatNumber } from "../../utils/utils";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const UserInfo = () => {
-  const totalRating = 3;
-  const rating = 1;
+  const userInfoFromStorage: any = localStorage.getItem("userInfo");
+
+  const userInfo: User = useSelector(
+    (state: RootState) => state.UserInfoSlice.userInfo
+  );
+
+  const user =
+    Object.keys(userInfo).length === 0
+      ? JSON.parse(userInfoFromStorage)
+      : userInfo;
+
+  const {
+    acc_no,
+    bank_name,
+    bvn,
+    children,
+    email,
+    facebook_username,
+    gender,
+    guarantor_email,
+    guarantor_name,
+    guarantor_phone_number,
+    guarantor_relationship,
+    instagram_username,
+    lendsrq_id,
+    level_of_education,
+    loan_amount,
+    marital_status,
+    monthly_income,
+    name,
+    office_email,
+    phone_number,
+    residence,
+    sector_of_employment,
+    twitter_username,
+    user_tier,
+  } = user;
+
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/");
+  };
   return (
     <div className="user-main">
       <div className="top">
-        <div className="back-text">
-          <img src="/assets/back-icon.svg" alt="back" className="icon" />
+        <div className="back-text" onClick={handleNavigate}>
+          <img
+            src="/assets/back-icon.svg"
+            alt="back"
+            className="icon"
+            style={{ cursor: "pointer" }}
+          />
           <span className="text">Back to Users</span>
         </div>
 
@@ -31,14 +83,14 @@ const UserInfo = () => {
             />
           </div>
           <div className="middle-top-second">
-            <span className="middle-name">Grace Effiom</span>
-            <span className="serial-number">LSQFf587g90</span>
+            <span className="middle-name">{name}</span>
+            <span className="serial-number">{lendsrq_id}</span>
           </div>
           <div className="middle-top-third">
             <span className="tier">User's Tier</span>
             <span className="stars">
-              {[...Array(totalRating)].map((star, index) => {
-                if (index < rating) {
+              {[...Array(3)].map((star, index) => {
+                if (index < +user_tier) {
                   return <img src="/assets/filledStar-icon.png" alt="star" />;
                 } else {
                   return <img src="/assets/emptyStar-icon.png" alt="star" />;
@@ -47,8 +99,10 @@ const UserInfo = () => {
             </span>
           </div>
           <div className="middle-top-fourth">
-            <span className="middle-ammount">₦200,000.00</span>
-            <span className="bank">9912345678/Providus Bank</span>
+            <span className="middle-ammount">₦{formatNumber(loan_amount)}</span>
+            <span className="bank">
+              {acc_no}/{bank_name}
+            </span>
           </div>
         </div>
 
@@ -69,35 +123,37 @@ const UserInfo = () => {
         <div className="personal-cont">
           <div className="container">
             <span className="top-text">FULL NAME</span>
-            <span className="bottom-text">Grace Effiom</span>
+            <span className="bottom-text">{name}</span>
           </div>
           <div className="container">
             <span className="top-text">PHONE NUMBER</span>
-            <span className="bottom-text">08078754215</span>
+            <span className="bottom-text">{phone_number}</span>
           </div>
           <div className="container">
             <span className="top-text">EMAIL ADDRESS</span>
-            <span className="bottom-text">Segunfaozan110@gmail.com</span>
+            <span className="bottom-text">{email}</span>
           </div>
           <div className="container">
             <span className="top-text">BVN</span>
-            <span className="bottom-text">1234567890</span>
+            <span className="bottom-text">{bvn}</span>
           </div>
           <div className="container">
             <span className="top-text">GENDER</span>
-            <span className="bottom-text">Male</span>
+            <span className="bottom-text">{capitalizeFirstLetter(gender)}</span>
           </div>
           <div className="container">
             <span className="top-text">MARITAL STATUS</span>
-            <span className="bottom-text">Single</span>
+            <span className="bottom-text">
+              {capitalizeFirstLetter(marital_status)}
+            </span>
           </div>
           <div className="container">
             <span className="top-text">CHILDREN</span>
-            <span className="bottom-text">None</span>
+            <span className="bottom-text">{children}</span>
           </div>
           <div className="container">
             <span className="top-text">TYPE OF RESIDENCE</span>
-            <span className="bottom-text">Parent's Apartment</span>
+            <span className="bottom-text">{residence}</span>
           </div>
         </div>
 
@@ -105,7 +161,9 @@ const UserInfo = () => {
         <div className="personal-cont education-and-employment">
           <div className="container">
             <span className="top-text">LEVEL OF EDUCATION</span>
-            <span className="bottom-text">BSc.</span>
+            <span className="bottom-text">
+              {capitalizeFirstLetter(level_of_education)}
+            </span>
           </div>
           <div className="container">
             <span className="top-text">EMPLOYMENT STATUS</span>
@@ -113,7 +171,9 @@ const UserInfo = () => {
           </div>
           <div className="container">
             <span className="top-text">SECTOR OF EMPLOYMENT</span>
-            <span className="bottom-text">Fintech</span>
+            <span className="bottom-text">
+              {capitalizeFirstLetter(sector_of_employment)}
+            </span>
           </div>
           <div className="container">
             <span className="top-text">DURATION OF EMPLOYMENT</span>
@@ -121,15 +181,17 @@ const UserInfo = () => {
           </div>
           <div className="container">
             <span className="top-text">OFFICE EMAIL</span>
-            <span className="bottom-text">grace@lendsqr.com</span>
+            <span className="bottom-text">{office_email}</span>
           </div>
           <div className="container">
             <span className="top-text">MONTHLY INCOME</span>
-            <span className="bottom-text">₦200,000.00- ₦400,000.00</span>
+            <span className="bottom-text">₦{formatNumber(monthly_income)}</span>
           </div>
           <div className="container">
             <span className="top-text">LOAN REPAYMENT</span>
-            <span className="bottom-text">40,000</span>
+            <span className="bottom-text">
+              ₦{formatNumber(loan_amount / 12)}
+            </span>
           </div>
         </div>
 
@@ -137,38 +199,40 @@ const UserInfo = () => {
         <div className="personal-cont">
           <div className="container">
             <span className="top-text">TWITTER</span>
-            <span className="bottom-text">@grace_effiom</span>
+            <span className="bottom-text">{twitter_username}</span>
           </div>
 
           <div className="container">
             <span className="top-text">FACEBOOK</span>
-            <span className="bottom-text">Grace Effiom</span>
+            <span className="bottom-text">{facebook_username}</span>
           </div>
 
           <div className="container">
             <span className="top-text">INSTAGRAM</span>
-            <span className="bottom-text">@grace_effiom</span>
+            <span className="bottom-text">{instagram_username}</span>
           </div>
         </div>
         <span className="bottom-header">Guarantor</span>
         <div className="personal-cont guarantor">
           <div className="container">
             <span className="top-text">FULL NAME</span>
-            <span className="bottom-text">Debby Ogana</span>
+            <span className="bottom-text">{guarantor_name}</span>
           </div>
 
           <div className="container">
             <span className="top-text">PHONE NUMBER</span>
-            <span className="bottom-text">07060780922</span>
+            <span className="bottom-text">{guarantor_phone_number}</span>
           </div>
 
           <div className="container">
             <span className="top-text">EMAIL ADDRESS</span>
-            <span className="bottom-text">debby@gmail.com</span>
+            <span className="bottom-text">{guarantor_email}</span>
           </div>
           <div className="container">
             <span className="top-text">RELATIONSHIP</span>
-            <span className="bottom-text">Sister</span>
+            <span className="bottom-text">
+              {capitalizeFirstLetter(guarantor_relationship)}
+            </span>
           </div>
         </div>
       </div>

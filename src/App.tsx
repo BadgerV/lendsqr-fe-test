@@ -5,13 +5,28 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "./app/store";
-import { fetchUserData } from "./app/UserInfoSlice/UserInfoSlice";
+import {
+  fetchUserData,
+  getPage,
+  setUsersInfo,
+} from "./app/UserInfoSlice/UserInfoSlice";
 
 const App: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const userData = localStorage.getItem("userData");
+  let storedUserData: any;
+
+  if (userData) {
+    storedUserData = JSON.parse(userData);
+  }
 
   useEffect(() => {
-    dispatch(fetchUserData());
+    if (!storedUserData) {
+      dispatch(fetchUserData());
+      dispatch(getPage());
+    } else {
+      dispatch(setUsersInfo(storedUserData));
+    }
   }, []);
 
   return (

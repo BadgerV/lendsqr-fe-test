@@ -89,8 +89,8 @@ const RowSeries: React.FC<RowSeriesProps> = ({
             <span
               className="rowSeries__view"
               onClick={() => {
-                handleDispatch(id);
                 handleNavigate();
+                handleDispatch(id);
               }}
             >
               View Details
