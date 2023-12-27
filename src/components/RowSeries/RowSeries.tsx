@@ -13,14 +13,20 @@ import Select from "react-select";
 import { RowSeriesProps, HoverDisplayProps } from "../../types";
 import { dropDownCustomStyles } from "../../utils/utils";
 
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../app/store";
+import { setUser } from "../../app/UserInfoSlice/UserInfoSlice";
+
 //JSX element
 const RowSeries: React.FC<RowSeriesProps> = ({
+  id,
+  phone_number,
+  date_joined,
   name,
   email,
-  phone,
-  username,
-  date,
-  type,
+  organization,
+  status,
 }) => {
   //state to track if the
   const [openModal, setModal] = useState(false);
@@ -29,28 +35,39 @@ const RowSeries: React.FC<RowSeriesProps> = ({
     setModal(!openModal);
   };
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleNavigate = () => {
+    navigate("/user");
+  };
+
+  const handleDispatch = (id: number) => {
+    dispatch(setUser(id));
+  };
+
   return (
     <div
       className="rowseries__container"
       style={{ borderBottom: "1px solid #5d5f631a" }}
     >
       <div className="rowseries__container--first">
-        <span className="rowseries__text">{name}</span>
+        <span className="rowseries__text">{organization}</span>
       </div>
       <div className="rowseries__container--second">
-        <span className="rowseries__text">{username}</span>
+        <span className="rowseries__text">{name}</span>
       </div>
       <div className="rowseries__container--third">
         <span className="rowseries__text">{email}</span>
       </div>
       <div className="rowseries__container--fourth">
-        <span className="rowseries__text">{phone}</span>
+        <span className="rowseries__text">{phone_number}</span>
       </div>
       <div className="rowseries__container--fifth">
-        <span className="rowseries__text">{date}</span>
+        <span className="rowseries__text">{date_joined}</span>
       </div>
       <div className="rowseries__container--sixth">
-        <Status type={type} />
+        <Status type={status} />
       </div>
       <div className="rowseries__container--seventh">
         <img
@@ -69,7 +86,15 @@ const RowSeries: React.FC<RowSeriesProps> = ({
               className="rowSeries__hover-icon"
               alt=""
             />
-            <span className="rowSeries__view">View Details</span>
+            <span
+              className="rowSeries__view"
+              onClick={() => {
+                handleDispatch(id);
+                handleNavigate();
+              }}
+            >
+              View Details
+            </span>
           </div>
           <div className="rowSeries__options-class">
             <img

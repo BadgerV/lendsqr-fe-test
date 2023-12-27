@@ -12,83 +12,60 @@ import { RowSeriesHeader } from "../RowSeries/RowSeries";
 //importing Select from the react-select library
 import Select from "react-select";
 
+import { useSelector, useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "../../app/store";
+import { useEffect, useState } from "react";
+import {
+  getPage,
+  nextPage,
+  prevPage,
+  setPageNumber,
+} from "../../app/UserInfoSlice/UserInfoSlice";
 //JSX element
-//JSX elemtn
 const Main = () => {
-  const details = [
-    {
-      name: "Adedeji Elubo",
-      email: "adedeji@lendsqr.com",
-      phone: "08078903721",
-      username: "Adedeji",
-      date: "May 15, 2020 10:00 AM",
-      type: "inactive",
-    },
-    {
-      name: "Irorun",
-      email: "debby2@irorun.com",
-      phone: "08160780928",
-      username: "Debby Ogana",
-      date: "Apr 30, 2020 10:00 AM",
-      type: "pending",
-    },
-    {
-      name: "Lendsqr",
-      email: "grace@lendstar.com",
-      phone: "07060780922",
-      username: "Grace Effiom",
-      date: "Apr 30, 2020 10:00 AM",
-      type: "blacklist",
-    },
-    {
-      name: "Lendstar",
-      email: "tosin@lendsqr.com",
-      phone: "07003309226",
-      username: "Tosin Dokunmu",
-      date: "Apr 10, 2020 10:00 AM",
-      type: "pending",
-    },
-    {
-      name: "Lendsqr",
-      email: "grace@lendstar.com",
-      phone: "07060780922",
-      username: "Grace Effiom",
-      date: "Apr 30, 2020 10:00 AM",
-      type: "active",
-    },
-    {
-      name: "Lendstar",
-      email: "tosin@lendsqr.com",
-      phone: "08060780900",
-      username: "Tosin Dokunmu",
-      date: "Apr 10, 2020 10:00 AM",
-      type: "pending",
-    },
-    {
-      name: "Lendsqr",
-      email: "grace@lendstar.com",
-      phone: "08078754215",
-      username: "Grace Effiom",
-      date: "May 15, 2020 10:00 AM",
-      type: "pending",
-    },
-    {
-      name: "Lendstar",
-      email: "adedejiEmannnuel@gmail.com",
-      phone: "07060780922",
-      username: "Tosin Dokunmu",
-      date: "May 15, 2020 10:00 AM",
-      type: "pending",
-    },
-    {
-      name: "Lendsqr",
-      email: "adedejiEmannnuel@gmail.com",
-      phone: "08078754215",
-      username: "Grace Effiom",
-      date: "May 15, 2020 10:00 AM",
-      type: "blacklist",
-    },
-  ];
+  const dispatch = useDispatch<AppDispatch>();
+  const page = useSelector((state: RootState) => state.UserInfoSlice.page);
+  const isLoading = useSelector(
+    (state: RootState) => state.UserInfoSlice.isLoading
+  );
+  const pageNumber = useSelector(
+    (state: RootState) => state.UserInfoSlice.pageNumber
+  );
+
+  //PAGINATION DATA
+  const [firstNumber, setFirstNumber] = useState(pageNumber);
+  const [secondNumber, setSecondNumber] = useState(pageNumber + 1);
+  const [thirdNumber, setThirdNumber] = useState(pageNumber + 2);
+  const [fourthNumber, setFourthNumber] = useState(55);
+  const [fifthNumber, setFifthNumber] = useState(56);
+
+  useEffect(() => {
+    if (isLoading != true) {
+      dispatch(getPage());
+      console.log(page);
+    }
+  }, [isLoading]);
+
+  const goToNextPage = () => {
+    dispatch(nextPage());
+    dispatch(getPage());
+  };
+  const goToPrevPage = () => {
+    dispatch(prevPage());
+    dispatch(getPage());
+  };
+
+  const setPageNum = (num: number) => {
+    dispatch(setPageNumber(num));
+    dispatch(getPage());
+  };
+
+  useEffect(() => {
+    setFirstNumber(pageNumber);
+    setSecondNumber(pageNumber + 1);
+    setThirdNumber(pageNumber + 2);
+  }, [pageNumber]);
+
   return (
     <div className="main-container">
       <div className="main-container__top">
@@ -116,7 +93,7 @@ const Main = () => {
         <>
           <RowSeriesHeader />
 
-          {details.map((detail, idx) => {
+          {page.map((detail, idx) => {
             return <RowSeries {...detail} key={idx} />;
           })}
         </>
@@ -130,15 +107,30 @@ const Main = () => {
           <span>out of 100</span>
         </div>
         <div className="main-container__pagination-right">
-          <img src="/assets/prev-icon.svg" alt="prev" />
-          <span>1</span>
-          <span className="span-for-larger-screen-sizes">2</span>
-          <span className="span-for-larger-screen-sizes">3</span>
+          <img src="/assets/prev-icon.svg" alt="prev" onClick={goToPrevPage} />
+          <span>{firstNumber}</span>
+          <span
+            className="span-for-larger-screen-sizes"
+            onClick={() => setPageNum(secondNumber)}
+          >
+            {secondNumber}
+          </span>
+          <span
+            className="span-for-larger-screen-sizes"
+            onClick={() => setPageNum(thirdNumber)}
+          >
+            {thirdNumber}
+          </span>
           <span>...</span>
-          <span className="span-for-larger-screen-sizes">15</span>
-          <span>16</span>
+          <span
+            className="span-for-larger-screen-sizes"
+            onClick={() => setPageNum(fourthNumber)}
+          >
+            {fourthNumber}
+          </span>
+          <span onClick={() => setPageNum(fifthNumber)}>{fifthNumber}</span>
 
-          <img src="/assets/next-icon.svg" alt="next" />
+          <img src="/assets/next-icon.svg" alt="next" onClick={goToNextPage} />
         </div>
       </div>
     </div>

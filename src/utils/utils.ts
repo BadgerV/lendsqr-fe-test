@@ -90,6 +90,3 @@ export const paginationSelectStyles = {
   }),
 };
 
-//styles for the star component
-export const emptyStarStyle = { color: "#E9B200", border: "1px solid #E9B200" };
-export const fullStarStyle = { color: "#E9B200", border: "1px solid #E9B200" };
