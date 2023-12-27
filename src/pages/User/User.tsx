@@ -1,32 +1,37 @@
-//importing useState
+// Importing useState from React
 import { useState } from "react";
 
-//importing stylesheet
+// Importing the user styles
 import "../../styles/User/user.styles.scss";
 
-//importing components
+// Importing components
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import UserInfo from "../../components/UserInfo/UserInfo";
 
-//JSX ELEMENT
+// User component for the user page
 const User = () => {
-  //state to track whether sidebar is open
+  // State variable to track whether the sidebar is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
-  //function that changes the open state
+  // Function that changes the open state of the sidebar
   const openFunction = () => {
+    // Toggling the value of isOpen based on its current state
     if (isOpen) {
       setIsOpen(false);
     } else {
       setIsOpen(true);
     }
   };
+
   return (
     <div className="userpage">
+      {/* Navbar Component */}
       <Navbar />
       <>
+        {/* User Splash Container */}
         <div className="user-splash">
+          {/* Menu Icon */}
           <img
             src="/assets/Menu.svg"
             alt="menu"
@@ -38,12 +43,15 @@ const User = () => {
               display: isOpen ? "none" : "block",
             }}
           />
+
+          {/* User Main Container */}
           <div
             className="usermain"
             style={{
               left: isOpen ? 0 : "-100%",
             }}
           >
+            {/* Close Icon */}
             <img
               src="/assets/close.svg"
               alt="close"
@@ -55,8 +63,11 @@ const User = () => {
                 display: isOpen ? "block" : "none",
               }}
             />
+            {/* Sidebar Component */}
             <Sidebar />
           </div>
+
+          {/* UserInfo Component */}
           <UserInfo />
         </div>
       </>
@@ -64,4 +75,5 @@ const User = () => {
   );
 };
 
+// Exporting the User component as the default export
 export default User;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// custom styles for select dropdown
+// Custom styles for select dropdown
 export const dropDownCustomStyles = {
   input: (provided: any) => ({
     ...provided,
@@ -45,6 +45,8 @@ export const dropDownCustomStyles = {
     fontWeight: "300",
   }),
 };
+
+// Custom styles for pagination select dropdown
 export const paginationSelectStyles = {
   input: (provided: any) => ({
     ...provided,
@@ -90,11 +92,13 @@ export const paginationSelectStyles = {
   }),
 };
 
+// Function to format a number
 export function formatNumber(number: number): string {
   const roundedNumber = Math.round(number / 1000) * 1000;
   return roundedNumber.toLocaleString();
 }
 
+// Function to capitalize the first letter of a string
 export function capitalizeFirstLetter(input: string): string {
   return input.charAt(0).toUpperCase() + input.slice(1);
 }

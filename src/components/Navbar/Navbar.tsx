@@ -1,20 +1,38 @@
 // Importing styles
 import "../../styles/Navbar/navbar.styles.scss";
 
+//importing useSelector
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
+
+// Functional component representing the Navbar
 const Navbar = () => {
+  const loggedInUser = useSelector(
+    (state: RootState) => state.UserInfoSlice.loggedInUser
+  );
   return (
+    // Container for the Navbar
     <div className="navbar-container">
+      {/* Left section of the Navbar */}
       <div className="navbar-container__left">
+        {/* Logo */}
         <img src="/assets/logo.png" alt="" className="navbar-logo" />
+
+        {/* Brand name */}
         <span>lendsqr</span>
       </div>
+
+      {/* Middle section of the Navbar */}
       <div className="navbar-container__middle">
         <div className="navbar-container__middle-input-cont">
+          {/* Search input */}
           <input
             type="text"
             placeholder="Search for anything"
             className="navbar-search-input"
           />
+
+          {/* Search icon */}
           <div className="img-container">
             <img
               src="/assets/search-icon.png"
@@ -24,13 +42,20 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Right section of the Navbar */}
       <div className="navbar-container__right">
+        {/* Docs link */}
         <span className="navbar-container__right-doc-text">Docs</span>
+
+        {/* Bell icon */}
         <img
           src="/assets/bell-icon.png"
           alt=""
           className="navbar-container__right-bell-icon"
         />
+
+        {/* Profile picture */}
         <img
           src="assets/profile-pic.png"
           alt="profile-pic"
@@ -39,7 +64,12 @@ const Navbar = () => {
           width={45}
         />
 
-        <span className="navbar-container__right-profile-text">Adedeji</span>
+        {/* Profile name */}
+        <span className="navbar-container__right-profile-text">
+          {loggedInUser}
+        </span>
+
+        {/* Dropdown icon */}
         <img
           src="/assets/down-icon.png"
           alt="dropdown"
@@ -50,4 +80,5 @@ const Navbar = () => {
   );
 };
 
+// Exporting the Navbar component as the default export
 export default Navbar;

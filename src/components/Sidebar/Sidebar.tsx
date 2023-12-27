@@ -4,10 +4,11 @@ import "../../styles/Sidebar/sidebar.styles.scss";
 // Importing TextWithIcon component
 import TextWithIcon from "../TextWithIcon/TextWithIcon";
 
-//JSX element
+// JSX element representing the Sidebar
 const Sidebar = () => {
   return (
     <div className="sidebar-container">
+      {/* Switch Organization Section */}
       <div className="sidebar__switch-organization-text">
         <img src="/assets/Briefcase.png" alt="" className="sidebar__icon" />
         <span className="sidebar__text">Switch Organization</span>
@@ -18,8 +19,10 @@ const Sidebar = () => {
         />
       </div>
 
+      {/* Dashboard Section */}
       <TextWithIcon text="Dashboard" icon="/assets/home-icon.png" />
 
+      {/* Customers Section */}
       <span className="sidebar__heading-text">CUSTOMERS</span>
       <TextWithIcon text="Users" icon="/assets/user-icon.png" />
       <TextWithIcon text="Guarantors" icon="/assets/gua-icon.png" />
@@ -30,6 +33,7 @@ const Sidebar = () => {
       <TextWithIcon text="Whitelist" icon="/assets/check-icon.png" />
       <TextWithIcon text="Karma" icon="/assets/karma-icon.png" />
 
+      {/* Businesses Section */}
       <span className="sidebar__heading-text">BUSINESSES</span>
       <TextWithIcon text="Organization" icon="/assets/Briefcase.png" />
       <TextWithIcon text="Loan Products" icon="/assets/hand-icon.png" />
@@ -41,6 +45,7 @@ const Sidebar = () => {
       <TextWithIcon text="Settlement" icon="/assets/settle-icon.png" />
       <TextWithIcon text="Reports" icon="/assets/chart-icon.png" />
 
+      {/* Settings Section */}
       <span className="sidebar__heading-text">SETTINGS</span>
       <TextWithIcon text="Preferences" icon="/assets/slide-icon.png" />
       <TextWithIcon text="Fees and Pricing" icon="/assets/divide-icon.png" />
@@ -49,4 +54,5 @@ const Sidebar = () => {
   );
 };
 
+// Exporting the Sidebar component as the default export
 export default Sidebar;

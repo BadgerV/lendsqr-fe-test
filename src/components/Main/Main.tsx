@@ -1,17 +1,18 @@
-//importing external stylesheet
+// Importing external stylesheet
 import "../../styles/Main/main.styles.scss";
 import { paginationSelectStyles } from "../../utils/utils";
 
-//importing infobox component
+// Importing InfoBox component
 import InfoBox from "../InfoBox/InfoBox";
 
-//imorting external components
+// Importing external components
 import RowSeries from "../RowSeries/RowSeries";
 import { RowSeriesHeader } from "../RowSeries/RowSeries";
 
-//importing Select from the react-select library
+// Importing Select from the react-select library
 import Select from "react-select";
 
+// Importing Redux hooks and actions
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../app/store";
 import { useEffect, useState } from "react";
@@ -21,8 +22,10 @@ import {
   prevPage,
   setPageNumber,
 } from "../../app/UserInfoSlice/UserInfoSlice";
-//JSX element
+
+// JSX element representing the main component
 const Main = () => {
+  // Redux hooks for dispatching actions and selecting state
   const dispatch = useDispatch<AppDispatch>();
   const page = useSelector((state: RootState) => state.UserInfoSlice.page);
   const isLoading = useSelector(
@@ -32,46 +35,53 @@ const Main = () => {
     (state: RootState) => state.UserInfoSlice.pageNumber
   );
 
-  //PAGINATION DATA
+  // Pagination data state
   const [firstNumber, setFirstNumber] = useState(pageNumber);
   const [secondNumber, setSecondNumber] = useState(pageNumber + 1);
   const [thirdNumber, setThirdNumber] = useState(pageNumber + 2);
   const [fourthNumber, setFourthNumber] = useState(55);
   const [fifthNumber, setFifthNumber] = useState(56);
 
+  // Effect to fetch page data when isLoading changes
   useEffect(() => {
-    if (isLoading != true) {
+    if (isLoading !== true) {
       dispatch(getPage());
       console.log(page);
     }
   }, [isLoading]);
 
+  // Functions to navigate to next and previous pages
   const goToNextPage = () => {
     dispatch(nextPage());
     dispatch(getPage());
   };
+
   const goToPrevPage = () => {
     dispatch(prevPage());
     dispatch(getPage());
   };
 
+  // Function to set page number and fetch data
   const setPageNum = (num: number) => {
     dispatch(setPageNumber(num));
     dispatch(getPage());
   };
 
+  // Effect to update pagination numbers when pageNumber changes
   useEffect(() => {
     setFirstNumber(pageNumber);
     setSecondNumber(pageNumber + 1);
     setThirdNumber(pageNumber + 2);
   }, [pageNumber]);
 
+  // JSX representing the main component structure
   return (
     <div className="main-container">
       <div className="main-container__top">
         <span>Users</span>
       </div>
       <div className="main-container__middle">
+        {/* InfoBox components */}
         <InfoBox icon="/assets/first-icon.png" text="USERS" number="2,453" />
         <InfoBox
           icon="/assets/second-icon.png"
@@ -91,22 +101,27 @@ const Main = () => {
       </div>
       <div className="main-container__bottom">
         <>
+          {/* Header for RowSeries */}
           <RowSeriesHeader />
 
+          {/* Mapping over the 'page' array to render RowSeries components */}
           {page.map((detail, idx) => {
             return <RowSeries {...detail} key={idx} />;
           })}
         </>
       </div>
 
+      {/* Pagination section */}
       <div className="main-container__pagination">
         <div className="main-container__pagination-left">
           <span>Showing</span>
 
+          {/* Dropdown for selecting number of items to display */}
           <Select styles={paginationSelectStyles} placeholder={"100"} />
           <span>out of 100</span>
         </div>
         <div className="main-container__pagination-right">
+          {/* Navigation buttons and page numbers */}
           <img src="/assets/prev-icon.svg" alt="prev" onClick={goToPrevPage} />
           <span>{firstNumber}</span>
           <span
