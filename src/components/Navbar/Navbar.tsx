@@ -3,7 +3,7 @@ import "../../styles/Navbar/navbar.styles.scss";
 
 //importing useSelector
 import { useSelector } from "react-redux";
-import { RootState } from "../../app/store";
+import { RootState } from "../../redux/store";
 
 // Functional component representing the Navbar
 const Navbar = () => {

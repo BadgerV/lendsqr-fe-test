@@ -4,8 +4,8 @@ import { RowSeriesProps, HoverDisplayProps } from "../../types"; // Props types
 import { dropDownCustomStyles } from "../../utils/utils"; // Utility function
 import { useNavigate } from "react-router-dom"; // React Router hook
 import { useDispatch } from "react-redux"; // Redux dispatch hook
-import { AppDispatch } from "../../app/store"; // Redux store type
-import { setUser } from "../../app/UserInfoSlice/UserInfoSlice"; // Redux action
+import { AppDispatch } from "../../redux/store"; // Redux store type
+import { setUser } from "../../redux/UserInfoSlice/UserInfoSlice"; // Redux action
 import "../../styles/RowSeries/rowSeries.styles.scss"; // Stylesheet
 import Status from "../Status/Status"; // Status component
 import Select from "react-select"; // Select component
@@ -87,6 +87,7 @@ const RowSeries: React.FC<RowSeriesProps> = ({
           alt="opt"
           className="RowSeries__icon"
           onClick={handleToggle}
+          style={{ cursor: "pointer" }}
         />
         {/* Options Hover */}
         <div

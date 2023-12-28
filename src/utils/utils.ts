@@ -93,12 +93,18 @@ export const paginationSelectStyles = {
 };
 
 // Function to format a number
-export function formatNumber(number: number): string {
+export const formatNumber = (number: number): string => {
   const roundedNumber = Math.round(number / 1000) * 1000;
   return roundedNumber.toLocaleString();
-}
+};
 
 // Function to capitalize the first letter of a string
-export function capitalizeFirstLetter(input: string): string {
+export const capitalizeFirstLetter = (input: string): string => {
   return input.charAt(0).toUpperCase() + input.slice(1);
-}
+};
+
+// Function to format a number with commas
+export const formatNumberWithCommas = (number: number): string => {
+  // Use the toLocaleString method with 'en-US' locale to add commas
+  return number.toLocaleString("en-US");
+};

@@ -5,18 +5,18 @@ import Login from "./pages/Login/Login";
 
 // Importing React hooks and components
 import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "./app/store";
+import { AppDispatch } from "./redux/store";
 import {
   fetchUserData,
   getPage,
   setUsersInfo,
-} from "./app/UserInfoSlice/UserInfoSlice";
+} from "./redux/UserInfoSlice/UserInfoSlice";
 
 // Importing user type from the types file
 import { User as UserData } from "./types";
-import { RootState } from "./app/store";
+import { RootState } from "./redux/store";
 
 import { useNavigate } from "react-router-dom";
 
@@ -62,6 +62,8 @@ const App: React.FC = () => {
     <div className="app">
       {/* Set up the React Router for navigation */}
       <Routes>
+        {/* Redirect from "/" to "/dashboard" */}
+        <Route path="/" element={<Navigate to="/dashboard" />} />
         {/* Define routes for different pages */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />

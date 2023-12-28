@@ -147,6 +147,14 @@
 
       font-size: 0.9rem;
       font-weight: 500;
+
+      &:disabled {
+        background-color: lighten(
+          $accent-color,
+          10%
+        ); 
+        cursor: not-allowed;
+      }
     }
   }
 }

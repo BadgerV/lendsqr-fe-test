@@ -1,15 +1,8 @@
-$text-color-primary: #213f7d;
-$background-color-primary: #39cdcc;
-$primary-font-size: 0.9rem;
-$tertiary-font-size: 0.7rem;
-$secondary-font-size: 0.8rem;
-$big-primary-font-size: 1.1rem;
-
-$header-text-color: #545f7d;
+//importing variables from global styles
+@import "../global.styles";
 
 .user-main {
   padding: 2.5rem;
-  background-color: hsla(0, 0%, 90%, 0.12);
 
   .top {
     margin-top: 1rem;
@@ -25,7 +18,7 @@ $header-text-color: #545f7d;
     .text {
       font-weight: 400;
       font-size: $primary-font-size;
-      color: $text-color-primary;
+      color: $primary-color;
     }
 
     .top-bottom {
@@ -43,7 +36,7 @@ $header-text-color: #545f7d;
       .user-text {
         font-size: 1.4rem;
         font-weight: 500;
-        color: $text-color-primary;
+        color: $primary-color;
       }
 
       .button-cont {
@@ -104,7 +97,7 @@ $header-text-color: #545f7d;
       gap: 1.5rem;
       align-items: center;
 
-      color: $text-color-primary;
+      color: $primary-color;
 
       @media screen and (max-width: 700px) {
         display: grid;
@@ -235,7 +228,7 @@ $header-text-color: #545f7d;
       box-shadow: 3px 5px 20px 0px #0000000a;
 
       .link {
-        color: $text-color-primary;
+        color: $primary-color;
         padding: 0 1.5rem 0.6rem 1.5rem;
         cursor: pointer;
       }
@@ -269,14 +262,14 @@ $header-text-color: #545f7d;
     background-color: white;
     margin-top: 2rem;
     padding: 1rem 1.5rem;
-    color: $text-color-primary;
+    color: $primary-color;
 
     .bottom-header {
       display: block;
 
       font-size: $primary-font-size;
       font-weight: 500;
-      color: $text-color-primary;
+      color: $primary-color;
       margin-bottom: 1.5rem;
     }
 

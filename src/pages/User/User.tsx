@@ -33,7 +33,7 @@ const User = () => {
         <div className="user-splash">
           {/* Menu Icon */}
           <img
-            src="/assets/Menu.svg"
+            src="/assets/menu-icon.svg"
             alt="menu"
             height={30}
             width={30}
@@ -46,7 +46,7 @@ const User = () => {
 
           {/* User Main Container */}
           <div
-            className="usermain"
+            className="user-left"
             style={{
               left: isOpen ? 0 : "-100%",
             }}
@@ -67,8 +67,10 @@ const User = () => {
             <Sidebar />
           </div>
 
-          {/* UserInfo Component */}
-          <UserInfo />
+          <div className="user-right">
+            {/* UserInfo Component */}
+            <UserInfo />
+          </div>
         </div>
       </>
     </div>

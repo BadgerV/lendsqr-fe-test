@@ -5,9 +5,9 @@ import "../../styles/TextWithIcon/textWithIcon.scss";
 import { TextWithIconProps } from "../../types";
 
 // JSX element representing text with an icon
-const TextWithIcon: React.FC<TextWithIconProps> = ({ icon, text }) => {
+const TextWithIcon: React.FC<TextWithIconProps> = ({ icon, text, onClick = undefined }) => {
   return (
-    <div className="text-with-icon">
+    <div className="text-with-icon" onClick={onClick}>
       {/* Icon */}
       <img src={icon} alt="" className="icon" />
       {/* Text */}

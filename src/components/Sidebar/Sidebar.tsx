@@ -4,8 +4,20 @@ import "../../styles/Sidebar/sidebar.styles.scss";
 // Importing TextWithIcon component
 import TextWithIcon from "../TextWithIcon/TextWithIcon";
 
+//importing useDispatch hok and AppDispatch type
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+
+//importing logoutUser from redux slice
+import { logoutUser } from "../../redux/UserInfoSlice/UserInfoSlice";
+
 // JSX element representing the Sidebar
 const Sidebar = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+  };
   return (
     <div className="sidebar-container">
       {/* Switch Organization Section */}
@@ -50,6 +62,20 @@ const Sidebar = () => {
       <TextWithIcon text="Preferences" icon="/assets/slide-icon.png" />
       <TextWithIcon text="Fees and Pricing" icon="/assets/divide-icon.png" />
       <TextWithIcon text="Audit Logs" icon="/assets/audit-icon.png" />
+      <TextWithIcon
+        text="System Messages"
+        icon="/assets/system-messages-icon.png"
+      />
+
+      {/*Logout section*/}
+      <div className="logout-section">
+        <TextWithIcon
+          text="Logout"
+          icon="assets/logout-icon.png"
+          onClick={handleLogout}
+        />
+        <span className="version-info">v1.2.0</span>
+      </div>
     </div>
   );
 };

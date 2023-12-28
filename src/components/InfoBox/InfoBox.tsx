@@ -3,6 +3,7 @@ import "../../styles/InfoBox/infoBox.scss";
 
 // Importing the InfoBoxProps type from the types file
 import { InfoBoxProps } from "../../types";
+import { formatNumberWithCommas } from "../../utils/utils";
 
 // Functional component representing an info box
 const InfoBox: React.FC<InfoBoxProps> = ({ icon, text, number }) => {
@@ -16,7 +17,7 @@ const InfoBox: React.FC<InfoBoxProps> = ({ icon, text, number }) => {
       <span className="text">{text}</span>
 
       {/* Number */}
-      <span className="number">{number}</span>
+      <span className="number">{formatNumberWithCommas(number)}</span>
     </div>
   );
 };

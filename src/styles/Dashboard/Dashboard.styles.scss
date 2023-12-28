@@ -1,11 +1,15 @@
+//importing variables from global styles
+@import "../global.styles";
+
 .dashboard-container {
   display: flex;
   flex-direction: row;
-  
+
   position: relative;
 
   .dashboard-right {
     flex: 1;
+    background-color: $background-color;
   }
 
   .menu-icon {
@@ -27,10 +31,10 @@
     cursor: pointer;
   }
 
-  .dashboard-user__main {
+  .sidebar-slide {
     background-color: white;
     transition: 0.2s all ease-out;
-    z-index: 300000000;
+    z-index: 20;
 
     @media screen and (max-width: 1230px) {
       position: absolute;

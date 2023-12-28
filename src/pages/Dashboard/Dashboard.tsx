@@ -31,7 +31,7 @@ const Dashboard = () => {
         <div className="dashboard-left">
           {/* Menu Icon */}
           <img
-            src="/assets/menu.svg"
+            src="/assets/menu-icon.svg"
             alt="menu"
             height={30}
             width={30}
@@ -41,9 +41,9 @@ const Dashboard = () => {
               display: isOpen ? "none" : "block",
             }}
           />
-          {/* Dashboard User Main Section */}
+          {/* Sidebar Slide */}
           <div
-            className="dashboard-user__main"
+            className="sidebar-slide"
             style={{
               left: isOpen ? 0 : "-100%",
             }}

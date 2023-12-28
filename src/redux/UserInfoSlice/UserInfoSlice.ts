@@ -79,6 +79,11 @@ const UserInfoSlice = createSlice({
       localStorage.setItem("loggedInUser", action.payload);
       state.loggedInUser = action.payload;
     },
+    //logout user
+    logoutUser: (state) => {
+      localStorage.removeItem("loggedInUser");
+      state.loggedInUser = null;
+    },
   },
   // Handle extra reducers for the asynchronous data fetching
   extraReducers: (builder) => {
@@ -108,5 +113,6 @@ export const {
   setUser,
   setUsersInfo,
   setLoggedInUser,
+  logoutUser
 } = UserInfoSlice.actions;
 export default UserInfoSlice.reducer;

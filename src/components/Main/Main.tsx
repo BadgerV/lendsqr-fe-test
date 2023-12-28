@@ -14,14 +14,14 @@ import Select from "react-select";
 
 // Importing Redux hooks and actions
 import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../app/store";
+import { AppDispatch, RootState } from "../../redux/store";
 import { useEffect, useState } from "react";
 import {
   getPage,
   nextPage,
   prevPage,
   setPageNumber,
-} from "../../app/UserInfoSlice/UserInfoSlice";
+} from "../../redux/UserInfoSlice/UserInfoSlice";
 
 // JSX element representing the main component
 const Main = () => {
@@ -34,13 +34,20 @@ const Main = () => {
   const pageNumber = useSelector(
     (state: RootState) => state.UserInfoSlice.pageNumber
   );
+  const noOfUsers = useSelector(
+    (state: RootState) => state.UserInfoSlice.usersInfo.length
+  );
+  const noOfUsersPerPage = useSelector(
+    (state: RootState) => state.UserInfoSlice.itemsPerPage
+  );
+  const lastPageNumber = Math.ceil(noOfUsers / noOfUsersPerPage);
 
   // Pagination data state
   const [firstNumber, setFirstNumber] = useState(pageNumber);
   const [secondNumber, setSecondNumber] = useState(pageNumber + 1);
   const [thirdNumber, setThirdNumber] = useState(pageNumber + 2);
-  const [fourthNumber, setFourthNumber] = useState(55);
-  const [fifthNumber, setFifthNumber] = useState(56);
+  const fourthNumber = 55;
+  const fifthNumber = 56;
 
   // Effect to fetch page data when isLoading changes
   useEffect(() => {
@@ -69,9 +76,9 @@ const Main = () => {
 
   // Effect to update pagination numbers when pageNumber changes
   useEffect(() => {
-    setFirstNumber(pageNumber);
-    setSecondNumber(pageNumber + 1);
-    setThirdNumber(pageNumber + 2);
+    setFirstNumber(Math.min(pageNumber, lastPageNumber));
+    setSecondNumber(Math.min(pageNumber + 1, lastPageNumber));
+    setThirdNumber(Math.min(pageNumber + 2, lastPageNumber));
   }, [pageNumber]);
 
   // JSX representing the main component structure
@@ -82,21 +89,25 @@ const Main = () => {
       </div>
       <div className="main-container__middle">
         {/* InfoBox components */}
-        <InfoBox icon="/assets/first-icon.png" text="USERS" number="2,453" />
+        <InfoBox
+          icon="/assets/first-icon.png"
+          text="USERS"
+          number={noOfUsers}
+        />
         <InfoBox
           icon="/assets/second-icon.png"
           text="ACTIVE USERS"
-          number="2,453"
+          number={noOfUsers}
         />
         <InfoBox
           icon="/assets/third-icon.png"
           text="USERS WITH LOANS"
-          number="12,453"
+          number={12453}
         />
         <InfoBox
           icon="/assets/fourth-icon.png"
           text="USERS WITH SAVINGS"
-          number="102,453"
+          number={102453}
         />
       </div>
       <div className="main-container__bottom">

@@ -1,5 +1,5 @@
 // Importing necessary modules and styles
-import { RootState } from "../../app/store"; // Redux store type
+import { RootState } from "../../redux/store"; // Redux store type
 import "../../styles/UserInfo/userInfo.styles.scss"; // Stylesheet
 import { useSelector } from "react-redux"; // Redux selector hook
 import { User } from "../../types"; // User type

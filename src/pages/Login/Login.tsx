@@ -3,12 +3,12 @@ import { useState } from "react";
 
 //importing hooks
 import { useNavigate } from "react-router-dom";
-import { AppDispatch } from "../../app/store";
+import { AppDispatch } from "../../redux/store";
 import { useDispatch } from "react-redux";
 
 //importing stylesheet
 import "../../styles/Login/login.scss";
-import { setLoggedInUser } from "../../app/UserInfoSlice/UserInfoSlice";
+import { setLoggedInUser } from "../../redux/UserInfoSlice/UserInfoSlice";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -37,6 +37,7 @@ const Login: React.FC = () => {
       navigate("/dashboard");
     } else {
       // Mock login failure
+      console.log("wrking")
       alert("Please provide a valid username and password.");
     }
   };

@@ -4,6 +4,7 @@
 export interface TextWithIconProps {
   icon: string; // Icon source
   text: string; // Text content
+  onClick?: MouseEventHandler<HTMLDivElement> | null;
 }
 
 // Props interface for the Status component
@@ -30,7 +31,7 @@ export interface HoverDisplayProps {
 // Props interface for the InfoBox component
 export interface InfoBoxProps {
   text: string; // Text content for the InfoBox
-  number: string; // Numeric content for the InfoBox
+  number: number; // Numeric content for the InfoBox
   icon: string; // Assuming the icon is a string representing the image source
 }
 
@@ -74,5 +75,5 @@ export interface State {
   page: User[]; // Users on the current page
   userInfo: User | Record<string>; // Information for a specific user
   itemsPerPage: number; // Number of items to display per page
-  loggedInUser : null | string;
+  loggedInUser: null | string;
 }

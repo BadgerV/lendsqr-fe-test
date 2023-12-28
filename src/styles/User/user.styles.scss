@@ -1,3 +1,6 @@
+//importing variables from global styles
+@import "../global.styles";
+
 .user-splash {
   display: grid;
   grid-template-columns: 1fr 3.5fr;
@@ -23,17 +26,19 @@
     cursor: pointer;
   }
 
-  .usermain {
+  .user-left {
     background-color: white;
-    transition: 0.2s all ease-out;
-    z-index: 3;
-    height: 100%;
+    transition: 0.2s all ease-in-out;
+    z-index: 20;
 
     @media screen and (max-width: 1133px) {
       position: absolute;
       left: 0;
       top: 0;
     }
+  }
+  .user-right {
+    background-color: $background-color;
   }
 
   @media screen and (max-width: 1133px) {
