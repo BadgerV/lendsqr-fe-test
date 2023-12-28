@@ -1,0 +1,28 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InfoBox Component Tests > renders InfoBox correctly 1`] = `
+<div>
+  <div
+    class="infobox-container"
+    data-testid="info-box-container"
+  >
+    <img
+      alt="info-icon"
+      class="icon"
+      height="35"
+      src="path/to/icon.png"
+      width="35"
+    />
+    <span
+      class="text"
+    >
+      Example Text
+    </span>
+    <span
+      class="number"
+    >
+      12,345
+    </span>
+  </div>
+</div>
+`;

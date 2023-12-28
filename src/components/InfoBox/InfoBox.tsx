@@ -9,9 +9,9 @@ import { formatNumberWithCommas } from "../../utils/utils";
 const InfoBox: React.FC<InfoBoxProps> = ({ icon, text, number }) => {
   return (
     // Container for the info box
-    <div className="infobox-container">
+    <div className="infobox-container" data-testid="info-box-container">
       {/* Icon */}
-      <img src={icon} alt="" className="icon" width={35} height={35} />
+      <img src={icon} alt="info-icon" className="icon" width={35} height={35} />
 
       {/* Text */}
       <span className="text">{text}</span>

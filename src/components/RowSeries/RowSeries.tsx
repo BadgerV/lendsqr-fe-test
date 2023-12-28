@@ -49,6 +49,7 @@ const RowSeries: React.FC<RowSeriesProps> = ({
     <div
       className="rowseries__container"
       style={{ borderBottom: "1px solid #5d5f631a" }}
+      data-testid = "row-series__container"
     >
       {/* Organization */}
       <div className="rowseries__container--first">
@@ -209,7 +210,7 @@ export const RowSeriesHeader = () => {
 
   // JSX structure for displaying headers and filter options
   return (
-    <div className="rowseries__container">
+    <div className="rowseries__container" data-testid = "rowseries-header">
       {/* Organization Header */}
       <div className="rowseries__container--first RowSeries__cursor">
         <span className="RowSeries__header_text" onClick={handleToggle}>
