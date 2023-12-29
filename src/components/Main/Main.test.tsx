@@ -77,7 +77,7 @@ describe("Main Component", () => {
   });
 
   it("ensure the pagination prev and next actions are integrated properly with the redux state", async () => {
-    // Mock redux store
+    // Mock redux store.
     const store = setupStore();
 
     // Faking the next page dispatch for testing purposes
@@ -92,6 +92,4 @@ describe("Main Component", () => {
     // Expect the page number to decrease after the prevPage has been dispatched
     expect(store.getState().UserInfoSlice.pageNumber).toEqual(1);
   });
-
-
 });
