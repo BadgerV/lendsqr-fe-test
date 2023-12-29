@@ -37,7 +37,6 @@ const Login: React.FC = () => {
       navigate("/dashboard");
     } else {
       // Mock login failure
-      console.log("wrking")
       alert("Please provide a valid username and password.");
     }
   };

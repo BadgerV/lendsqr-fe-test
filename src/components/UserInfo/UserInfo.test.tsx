@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { setupStore } from "../../redux/store";
 import { BrowserRouter } from "react-router-dom";
 import { State } from "../../types";
-import { capitalizeFirstLetter, formatNumber } from "../../utils/utils";
+import { formatNumber } from "../../utils/utils";
 
 describe("User Info Component", () => {
   const initialState: State = {
@@ -98,15 +98,9 @@ describe("User Info Component", () => {
     const monthly_income = formatNumber(
       store.getState().UserInfoSlice.userInfo.monthly_income
     );
-    const twitter_username =
-      store.getState().UserInfoSlice.userInfo.twitter_username;
-    const facebook_username =
-      store.getState().UserInfoSlice.userInfo.facebook_username;
-    const instagram_username =
-      store.getState().UserInfoSlice.userInfo.instagram_username;
     const guarantor_name =
       store.getState().UserInfoSlice.userInfo.guarantor_name;
-    const guarantor_phone_numbr =
+    const guarantor_phone_number =
       store.getState().UserInfoSlice.userInfo.guarantor_phone_number;
     const guarantor_email =
       store.getState().UserInfoSlice.userInfo.guarantor_email;
@@ -136,9 +130,16 @@ describe("User Info Component", () => {
       screen.getByText(new RegExp(sector_of_employment, "i"))
     ).toBeInTheDocument();
     expect(screen.getByText(office_email)).toBeInTheDocument();
-    expect(screen.getByText(monthly_income)).toBeInTheDocument();
-    expect(screen.getByText(twitter_username)).toBeInTheDocument();
-    expect(screen.getByText(instagram_username)).toBeInTheDocument();
-    expect(screen.getByText(facebook_username)).toBeInTheDocument();
+    expect(screen.getByText(`₦${monthly_income}`)).toBeInTheDocument();
+    const usernames = screen.getAllByTestId("username");
+
+    expect(usernames).toHaveLength(3);
+
+    expect(screen.getByText(guarantor_name)).toBeInTheDocument();
+    expect(screen.getByText(guarantor_phone_number)).toBeInTheDocument();
+    expect(screen.getByText(guarantor_email)).toBeInTheDocument();
+    expect(
+      screen.getByText(new RegExp(guarantor_relationship, "i"))
+    ).toBeInTheDocument();
   });
 });

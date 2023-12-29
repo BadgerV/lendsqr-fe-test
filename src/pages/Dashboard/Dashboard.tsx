@@ -24,26 +24,28 @@ const Dashboard = () => {
   return (
     <>
       {/* Navbar */}
-      <Navbar />
+      <Navbar data-testid="navbar" />
       {/* Dashboard Container */}
-      <div className="dashboard-container">
+      <div className="dashboard-container" data-testid="dashboard-container">
         {/* Dashboard Left Section */}
-        <div className="dashboard-left">
+        <div className="dashboard-left" data-testid="dashboard-left">
           {/* Menu Icon */}
+
           <img
             src="/assets/menu-icon.svg"
             alt="menu"
             height={30}
             width={30}
             className="menu-icon"
-            onClick={openFunction}
             style={{
               display: isOpen ? "none" : "block",
             }}
+            onClick={openFunction}
           />
           {/* Sidebar Slide */}
           <div
             className="sidebar-slide"
+            data-testid="sidebar-slide"
             style={{
               left: isOpen ? 0 : "-100%",
             }}
@@ -55,17 +57,18 @@ const Dashboard = () => {
               height={30}
               width={30}
               className="menu-icon-close"
-              onClick={openFunction}
               style={{
                 display: isOpen ? "block" : "none",
               }}
+              onClick={openFunction}
             />
             {/* Sidebar Component */}
+
             <Sidebar />
           </div>
         </div>
         {/* Dashboard Right Section */}
-        <div className="dashboard-right">
+        <div className="dashboard-right" data-testid="dashboard-right">
           {/* Main Component */}
           <Main />
         </div>

@@ -61,7 +61,7 @@ const UserInfo = () => {
 
   // JSX structure for the user information page
   return (
-    <div className="user-main" data-testid = "user-info">
+    <div className="user-main" data-testid="user-info">
       {/* Top Section */}
       <div className="top">
         {/* Back Button */}
@@ -99,7 +99,9 @@ const UserInfo = () => {
           </div>
           {/* User Details */}
           <div className="middle-top-second">
-            <span className="middle-name" data-testid = "name">{name}</span>
+            <span className="middle-name" data-testid="name">
+              {name}
+            </span>
             <span className="serial-number">{lendsrq_id}</span>
           </div>
           {/* User Tier */}
@@ -224,17 +226,23 @@ const UserInfo = () => {
           {/* Social information fields */}
           <div className="container">
             <span className="top-text">TWITTER</span>
-            <span className="bottom-text">{twitter_username}</span>
+            <span className="bottom-text"data-testid="username">
+              {twitter_username}
+            </span>
           </div>
 
           <div className="container">
             <span className="top-text">FACEBOOK</span>
-            <span className="bottom-text">{facebook_username}</span>
+            <span className="bottom-text"data-testid="username">
+              {facebook_username}
+            </span>
           </div>
 
           <div className="container">
             <span className="top-text">INSTAGRAM</span>
-            <span className="bottom-text">{instagram_username}</span>
+            <span className="bottom-text"data-testid="username">
+              {instagram_username}
+            </span>
           </div>
         </div>
         {/* Guarantor */}
