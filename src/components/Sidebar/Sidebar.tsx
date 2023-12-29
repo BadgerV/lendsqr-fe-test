@@ -18,6 +18,7 @@ const Sidebar = () => {
   const handleLogout = () => {
     dispatch(logoutUser());
   };
+
   return (
     <div className="sidebar-container">
       {/* Switch Organization Section */}

@@ -1,3 +1,5 @@
+
+
 // Importing stylesheet
 import "../../styles/TextWithIcon/textWithIcon.scss";
 
@@ -9,7 +11,7 @@ const TextWithIcon: React.FC<TextWithIconProps> = ({ icon, text, onClick = undef
   return (
     <div className="text-with-icon" onClick={onClick}>
       {/* Icon */}
-      <img src={icon} alt="" className="icon" />
+      <img src={icon} alt="text-wtih-icon-img" className="icon" />
       {/* Text */}
       <span className="text">{text}</span>
     </div>

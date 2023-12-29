@@ -134,7 +134,7 @@ const Main = () => {
         <div className="main-container__pagination-right">
           {/* Navigation buttons and page numbers */}
           <img src="/assets/prev-icon.svg" alt="prev" onClick={goToPrevPage} />
-          <span>{firstNumber}</span>
+          <span data-testid="first-number">{firstNumber}</span>
           <span
             className="span-for-larger-screen-sizes"
             onClick={() => setPageNum(secondNumber)}

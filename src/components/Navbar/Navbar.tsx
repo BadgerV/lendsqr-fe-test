@@ -12,7 +12,7 @@ const Navbar = () => {
   );
   return (
     // Container for the Navbar
-    <div className="navbar-container">
+    <div className="navbar-container" data-testid = "navbar-container">
       {/* Left section of the Navbar */}
       <div className="navbar-container__left">
         {/* Logo */}
@@ -65,7 +65,7 @@ const Navbar = () => {
         />
 
         {/* Profile name */}
-        <span className="navbar-container__right-profile-text">
+        <span className="navbar-container__right-profile-text" >
           {loggedInUser}
         </span>
 

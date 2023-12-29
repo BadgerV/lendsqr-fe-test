@@ -1,6 +1,6 @@
 // Importing necessary modules and styles
 import { useState } from "react"; // React state hook
-import { RowSeriesProps, HoverDisplayProps } from "../../types"; // Props types
+import { RowSeriesProps, ClickableDisplayProps } from "../../types"; // Props types
 import { dropDownCustomStyles } from "../../utils/utils"; // Utility function
 import { useNavigate } from "react-router-dom"; // React Router hook
 import { useDispatch } from "react-redux"; // Redux dispatch hook
@@ -133,12 +133,13 @@ const RowSeries: React.FC<RowSeriesProps> = ({
   );
 };
 
-// HoverDisplay component for displaying additional options on hover
-const HoverDisplay: React.FC<HoverDisplayProps> = ({ isOpen }) => {
+// ClickableDisplay component for displaying additional options on hover
+export const ClickableDisplay: React.FC<ClickableDisplayProps> = ({ isOpen }) => {
   return (
     <div
       className="RowSeries__hover-display"
       style={{ display: isOpen ? "flex" : "none" }}
+      data-testid = "clickable-component"
     >
       {/* Dropdowns and Input Fields for Filtering */}
       <div className="rowSeries__perInput">
@@ -221,10 +222,11 @@ export const RowSeriesHeader = () => {
           width={15}
           height={13}
           alt="filter"
+          data-testid = "filter"
           onClick={handleToggle}
         />
-        {/* HoverDisplay component for filter options */}
-        <HoverDisplay isOpen={isModalOpen} />
+        {/* ClickableDisplay component for filter options */}
+        <ClickableDisplay isOpen={isModalOpen} />
       </div>
 
       {/* Username Header */}

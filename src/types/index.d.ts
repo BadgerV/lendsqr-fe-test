@@ -24,7 +24,7 @@ export interface RowSeriesProps {
 }
 
 // Props interface for the HoverDisplay component
-export interface HoverDisplayProps {
+export interface ClickableDisplayProps {
   isOpen: boolean; // Flag indicating whether the hover display is open
 }
 

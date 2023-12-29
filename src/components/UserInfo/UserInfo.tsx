@@ -61,7 +61,7 @@ const UserInfo = () => {
 
   // JSX structure for the user information page
   return (
-    <div className="user-main">
+    <div className="user-main" data-testid = "user-info">
       {/* Top Section */}
       <div className="top">
         {/* Back Button */}
@@ -99,7 +99,7 @@ const UserInfo = () => {
           </div>
           {/* User Details */}
           <div className="middle-top-second">
-            <span className="middle-name">{name}</span>
+            <span className="middle-name" data-testid = "name">{name}</span>
             <span className="serial-number">{lendsrq_id}</span>
           </div>
           {/* User Tier */}
