@@ -1,6 +1,5 @@
 //importing variables from global styles
-@import "../global.styles";
-
+@import "../../utils/global.styles.scss";
 .login {
   height: 100vh;
 }
@@ -149,10 +148,7 @@
       font-weight: 500;
 
       &:disabled {
-        background-color: lighten(
-          $accent-color,
-          10%
-        ); 
+        background-color: lighten($accent-color, 10%);
         cursor: not-allowed;
       }
     }

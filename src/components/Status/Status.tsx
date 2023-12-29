@@ -1,5 +1,5 @@
 // Importing stylesheet
-import "../../styles/Status/Status.styles.scss";
+import './Status.styles.scss'
 import { StatusProps } from "../../types";
 
 // Functional component representing the status

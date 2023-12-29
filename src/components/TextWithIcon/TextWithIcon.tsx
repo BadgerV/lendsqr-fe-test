@@ -1,7 +1,7 @@
 
 
 // Importing stylesheet
-import "../../styles/TextWithIcon/textWithIcon.scss";
+import './textWithIcon.scss'
 
 // Importing types
 import { TextWithIconProps } from "../../types";

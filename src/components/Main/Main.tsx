@@ -1,5 +1,5 @@
 // Importing external stylesheet
-import "../../styles/Main/main.styles.scss";
+import "./main.styles.scss";
 import { paginationSelectStyles } from "../../utils/utils";
 
 // Importing InfoBox component

@@ -2,8 +2,8 @@
 import { useState } from "react"; // React state hook
 import Main from "../../components/Main/Main"; // Main component
 import Sidebar from "../../components/Sidebar/Sidebar"; // Sidebar component
-import "../../styles/Dashboard/Dashboard.styles.scss"; // Stylesheet
 import Navbar from "../../components/Navbar/Navbar"; // Navbar component
+import "./Dashboard.styles.scss";
 
 // Dashboard component for displaying the main dashboard layout
 const Dashboard = () => {
@@ -24,7 +24,7 @@ const Dashboard = () => {
   return (
     <>
       {/* Navbar */}
-      <Navbar data-testid="navbar" />
+      <Navbar />
       {/* Dashboard Container */}
       <div className="dashboard-container" data-testid="dashboard-container">
         {/* Dashboard Left Section */}

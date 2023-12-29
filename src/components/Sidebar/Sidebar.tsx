@@ -1,6 +1,5 @@
 // Importing stylesheet
-import "../../styles/Sidebar/sidebar.styles.scss";
-
+import './sidebar.styles.scss'
 // Importing TextWithIcon component
 import TextWithIcon from "../TextWithIcon/TextWithIcon";
 

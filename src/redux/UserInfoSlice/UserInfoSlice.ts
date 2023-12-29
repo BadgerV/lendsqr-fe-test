@@ -113,6 +113,6 @@ export const {
   setUser,
   setUsersInfo,
   setLoggedInUser,
-  logoutUser
+  logoutUser,
 } = UserInfoSlice.actions;
 export default UserInfoSlice.reducer;

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"; // React Router hook
 import { useDispatch } from "react-redux"; // Redux dispatch hook
 import { AppDispatch } from "../../redux/store"; // Redux store type
 import { setUser } from "../../redux/UserInfoSlice/UserInfoSlice"; // Redux action
-import "../../styles/RowSeries/rowSeries.styles.scss"; // Stylesheet
+import './rowSeries.styles.scss'; // Stylesheet
 import Status from "../Status/Status"; // Status component
 import Select from "react-select"; // Select component
 

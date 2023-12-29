@@ -7,7 +7,7 @@ import { AppDispatch } from "../../redux/store";
 import { useDispatch } from "react-redux";
 
 //importing stylesheet
-import "../../styles/Login/login.scss";
+import './login.scss'
 import { setLoggedInUser } from "../../redux/UserInfoSlice/UserInfoSlice";
 
 const Login: React.FC = () => {

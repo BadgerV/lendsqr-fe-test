@@ -1,5 +1,5 @@
 // Importing external stylesheet
-import "../../styles/InfoBox/infoBox.scss";
+import "./infoBox.scss";
 
 // Importing the InfoBoxProps type from the types file
 import { InfoBoxProps } from "../../types";

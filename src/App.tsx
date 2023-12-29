@@ -59,7 +59,7 @@ const App: React.FC = () => {
 
   // Render the main application structure
   return (
-    <div className="app">
+    <div className="app" data-testid="app-container">
       {/* Set up the React Router for navigation */}
       <Routes>
         {/* Redirect from "/" to "/dashboard" */}

@@ -1,6 +1,6 @@
 // Importing necessary modules and styles
 import { RootState } from "../../redux/store"; // Redux store type
-import "../../styles/UserInfo/userInfo.styles.scss"; // Stylesheet
+import './userInfo.styles.scss'; // Stylesheet
 import { useSelector } from "react-redux"; // Redux selector hook
 import { User } from "../../types"; // User type
 import { capitalizeFirstLetter, formatNumber } from "../../utils/utils"; // Utility functions
@@ -111,9 +111,15 @@ const UserInfo = () => {
               {/* Displaying stars based on user tier */}
               {[...Array(3)].map((star, index) => {
                 if (index < +user_tier) {
-                  return <img src="/assets/filledStar-icon.png" alt="star" />;
+                  return <img src="/assets/filledStar-icon.png" alt="star" key={index}/>;
                 } else {
-                  return <img src="/assets/emptyStar-icon.png" alt="star" />;
+                  return (
+                    <img
+                      src="/assets/emptyStar-icon.png"
+                      alt="star"
+                      key={index}
+                    />
+                  );
                 }
               })}
             </span>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // Importing the user styles
-import "../../styles/User/user.styles.scss";
+import './user.styles.scss';
 
 // Importing components
 import Navbar from "../../components/Navbar/Navbar";
@@ -25,7 +25,7 @@ const User = () => {
   };
 
   return (
-    <div className="userpage">
+    <div className="userpage" data-testid="userpage">
       {/* Navbar Component */}
       <Navbar />
       <>
@@ -50,6 +50,7 @@ const User = () => {
             style={{
               left: isOpen ? 0 : "-100%",
             }}
+            data-testid="sidebar-slide"
           >
             {/* Close Icon */}
             <img
@@ -67,7 +68,7 @@ const User = () => {
             <Sidebar />
           </div>
 
-          <div className="user-right">
+          <div className="user-right" data-testid="user-right">
             {/* UserInfo Component */}
             <UserInfo />
           </div>

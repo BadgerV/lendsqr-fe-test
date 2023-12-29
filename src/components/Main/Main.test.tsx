@@ -34,7 +34,7 @@ describe("Main Component", () => {
     };
 
     // Mock useSelector
-    (useSelector as vi.fn).mockImplementation((selector) =>
+    (useSelector as vi.fn).mockImplementation((selector : any) =>
       selector(mockState)
     );
 
@@ -60,7 +60,7 @@ describe("Main Component", () => {
     };
 
     // Mock useSelector
-    (useSelector as vi.fn).mockImplementation((selector) =>
+    (useSelector as vi.fn).mockImplementation((selector : any) =>
       selector(mockState)
     );
 

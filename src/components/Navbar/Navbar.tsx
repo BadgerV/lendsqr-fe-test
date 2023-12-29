@@ -1,5 +1,5 @@
 // Importing styles
-import "../../styles/Navbar/navbar.styles.scss";
+import './navbar.styles.scss'
 
 //importing useSelector
 import { useSelector } from "react-redux";
