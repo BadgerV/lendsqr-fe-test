@@ -110,6 +110,7 @@ const UserInfo = () => {
             <span className="stars">
               {/* Displaying stars based on user tier */}
               {[...Array(3)].map((star, index) => {
+                console.log(star);
                 if (index < +user_tier) {
                   return <img src="/assets/filledStar-icon.png" alt="star" key={index}/>;
                 } else {
