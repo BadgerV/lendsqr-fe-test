@@ -83,7 +83,7 @@ and for mobile responsiveness
 - components tests written in vitetest + typescript
 - test coverage + tests
 
-![image](https://i.postimg.cc/qv7SwzYb/main-test-tsx-lendsqr-Visual-Studio-Code-Administrator-12-30-2023-10-21-12-AM.png)
+![tests](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/e86f0580-0952-4ba7-acf9-c53368d891be)
 
 ## Run Web App on Local Environment.
 
