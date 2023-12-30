@@ -61,20 +61,20 @@ const userInformation = {
 This is an example of the user data gotten from the postman mock server.
 
 ## Demo.
-![image](https://media.gettyimages.com/id/500247167/photo/lagos-nigeria.jpg?s=612x612&w=0&k=20&c=lDFhHI-jDw-9m0W-3065o2k6uwu5jtZcWokrAaVJ0es=)
+![lendsqr test — Mozilla Firefox 12_30_2023 8_52_41 AM](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/97ac8e23-a35e-4240-950e-4f55258ea0d7)
 
-![image](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/ab88c1f8-12de-4d95-9d3c-5ab955fce5ff)
+![lendsqr-test-1](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/ed9d5217-a4d7-44a6-adce-7e7c6a2a7db9)
 
-![image](https://i.postimg.cc/j2YLxGwG/lendsqr-test-1.png)
+![lendsqr-test-2](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/8c801977-0acd-4779-b176-f1fac6d20954)
 
-![image](https://i.postimg.cc/d1yhKq12/lendsqr-test-2.png)
+![lendsqr-test-3](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/53c8f149-5882-493d-abfa-feb67831211d)
 
 and for mobile responsiveness
-![image](https://i.postimg.cc/9F8mpJG3/Screenshot-20231230-095141.png)
+![Screenshot_20231230-095141](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/600f00c8-9a0f-4d6d-8b37-b50c2453c6fa)
 
-![image](https://i.postimg.cc/kXXMKkRF/Screenshot-20231230-094036.png)
+![Screenshot_20231230-095126](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/469b4a4e-416d-42cb-9dff-4b0efca0e09e)
 
-![image](https://i.postimg.cc/5tvffJD1/Screenshot-20231230-095126.png)
+![Screenshot_20231230-094036](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/f648931f-23b6-4ee0-89ab-298ae3ab78a5)
 
 
 
