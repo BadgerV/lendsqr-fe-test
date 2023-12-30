@@ -70,11 +70,14 @@ This is an example of the user data gotten from the postman mock server.
 ![lendsqr-test-3](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/53c8f149-5882-493d-abfa-feb67831211d)
 
 and for mobile responsiveness
-![Screenshot_20231230-095141](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/600f00c8-9a0f-4d6d-8b37-b50c2453c6fa)
+![Screenshot_20231230-095141](https://github.com/BadgerV/Virtual-med/assets/98065344/f894bdad-3459-422d-ae16-cae630f15bea)
 
-![Screenshot_20231230-095126](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/469b4a4e-416d-42cb-9dff-4b0efca0e09e)
 
-![Screenshot_20231230-094036](https://github.com/BadgerV/lendsqr-fe-test/assets/98065344/f648931f-23b6-4ee0-89ab-298ae3ab78a5)
+![Screenshot_20231230-094054](https://github.com/BadgerV/Virtual-med/assets/98065344/f2c76c5a-c542-47cf-8b92-71b0551fd5f8)
+
+![Screenshot_20231230-094036](https://github.com/BadgerV/Virtual-med/assets/98065344/6af7921c-1f34-4c9f-816a-28d1540961cb)
+
+![Screenshot_20231230-095126](https://github.com/BadgerV/Virtual-med/assets/98065344/3fc65ba0-a33a-4a6b-b8c9-664590cc84fa)
 
 
 
