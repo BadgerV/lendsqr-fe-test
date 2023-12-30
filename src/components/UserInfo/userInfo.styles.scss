@@ -83,10 +83,11 @@
 
   .middle {
     background-color: white;
-    padding: 2rem 0 0 1.5rem;
+    padding: 2rem 1rem 0 1rem;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     box-shadow: 3px 5px 20px 0px #0000000a;
 
     .middle-top {
@@ -230,6 +231,7 @@
         color: $primary-color;
         padding: 0 1.5rem 0.6rem 1.5rem;
         cursor: pointer;
+        text-align: center;
       }
 
       .selected {
@@ -296,6 +298,10 @@
         @media screen and (max-width: 992px) {
           min-width: fit-content;
           max-width: fit-content;
+        }
+        @media screen and (max-width: 500px) {
+          flex: 1;
+          min-width: 100%;
         }
 
         .top-text {

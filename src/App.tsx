@@ -48,6 +48,7 @@ const App: React.FC = () => {
     } else {
       // Set user data from local storage if available
       dispatch(setUsersInfo(storedUserData));
+      dispatch(getPage());
     }
   }, []);
 

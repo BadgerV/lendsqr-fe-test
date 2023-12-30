@@ -28,9 +28,7 @@ const Main = () => {
   // Redux hooks for dispatching actions and selecting state
   const dispatch = useDispatch<AppDispatch>();
   const page = useSelector((state: RootState) => state.UserInfoSlice.page);
-  const isLoading = useSelector(
-    (state: RootState) => state.UserInfoSlice.isLoading
-  );
+
   const pageNumber = useSelector(
     (state: RootState) => state.UserInfoSlice.pageNumber
   );
@@ -51,11 +49,8 @@ const Main = () => {
 
   // Effect to fetch page data when isLoading changes
   useEffect(() => {
-    if (isLoading !== true) {
-      dispatch(getPage());
-      console.log(page);
-    }
-  }, [isLoading]);
+    dispatch(getPage());
+  }, []);
 
   // Functions to navigate to next and previous pages
   const goToNextPage = () => {
@@ -79,7 +74,7 @@ const Main = () => {
     setFirstNumber(Math.min(pageNumber, lastPageNumber));
     setSecondNumber(Math.min(pageNumber + 1, lastPageNumber));
     setThirdNumber(Math.min(pageNumber + 2, lastPageNumber));
-  }, [pageNumber]);
+  }, [pageNumber, page]);
 
   // JSX representing the main component structure
   return (

@@ -1,0 +1,91 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App component > renders without crashing 1`] = `
+<div>
+  <div
+    class="app"
+    data-testid="app-container"
+  >
+    <div
+      class="login"
+    >
+      <div
+        class="login-content"
+      >
+        <div
+          class="login-content__left"
+        >
+          <div
+            class="login-content__left-logo-container"
+          >
+            <img
+              alt="logo"
+              src="/assets/logo.png"
+            />
+            <span>
+              lendsqr
+            </span>
+          </div>
+          <img
+            alt="Login Page Left Image"
+            class="login-image"
+            src="/assets/pablo-sign-in.png"
+          />
+        </div>
+        <div
+          class="login-content__right"
+        >
+          <span
+            class="login-content__right-welcome-text"
+          >
+            Welcome!
+          </span>
+          <span
+            class="login-content__right-details-text"
+          >
+            Enter details to login.
+          </span>
+          <form
+            class="login-content__right-form"
+          >
+            <div
+              class="login-content__right-form-input-container"
+            >
+              <input
+                placeholder="Username"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="login-content__right-form-input-container"
+            >
+              <input
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <span
+                class="login-content__right-form-input-container-show-text"
+              >
+                SHOW
+              </span>
+            </div>
+            <span
+              class="login-content__right-forgot-password"
+            >
+              FORGOT PASSWORD?
+            </span>
+            <button
+              class="login-content__right-submit-btn"
+              disabled=""
+            >
+              LOG IN
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
